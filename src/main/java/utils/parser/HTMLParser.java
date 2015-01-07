@@ -25,9 +25,7 @@ public class HTMLParser {
      * @throws IOException - on error
      */
     public static Document getContentToUrlGet(String url) throws Exception {
-        Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
-
-        return doc;
+        return Jsoup.connect(url).userAgent("Mozilla").timeout(20000).get();
     }
 
     /**
@@ -38,9 +36,7 @@ public class HTMLParser {
      * @throws Exception
      */
     public static Document getContentToUrlPost(String url, Map<String,String> data) throws Exception {
-        Document doc = Jsoup.connect(url).data(data).userAgent("Mozilla").post();
-
-        return doc;
+        return Jsoup.connect(url).data(data).userAgent("Mozilla").timeout(20000).post();
     }
 
 
@@ -89,7 +85,7 @@ public class HTMLParser {
 
     /**
      * Retourne tous les elements textarea d'un element
-     * @param elmt
+     * @param elmt un element
      * @return tous les elements textarea
      */
     public static Elements getAllTextarea(Element elmt){

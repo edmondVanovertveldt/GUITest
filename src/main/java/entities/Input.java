@@ -39,7 +39,7 @@ public class Input implements entities.interfaces.IInput {
 
     @Override
     public String getType() {
-        return type;
+        return this.type;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Input implements entities.interfaces.IInput {
 
     @Override
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     //endregion Getteur
